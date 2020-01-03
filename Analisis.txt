@@ -1,0 +1,38 @@
+-Ejercicio 1
+Lo que hay que hacer es iterar sobre la cadena y concatenar cada caracter
+en orden inverso. La complejidad es O(n) donde n es la longitud de la cadena.
+
+-Ejercicio 2
+Lo que se hace es ir armando un subarreglo que cumpla la condición de estar
+ordenado. Cada vez que se obtiene un candidato se verifica que su longitud
+se la mayor hasta el momento. La complejidad es O(n).
+
+-Ejercicio 3
+Se copia el arreglo descartando los elementos repetidos. La complejidad es O(n).
+
+-Ejercicio 4
+Al analizar la suma se puede ver que el resultado es la resta de dos sumas
+0 + 1 + 2 + ... + m con 0 + 1 + 2 + ... + n-1, donde el resultado de ambas
+se obtiene con una fórmula, por lo que la complejidad es O(1)
+
+-Ejercicio 5
+Se organizan los empleados y las citas por día y horas. Luego por cada día del
+mes se itera sobre todos los horarios existentes, desde 00:00 a 23:30. Por cada
+hora se verifica que haya algún empleado que labore en ese horario y que no
+hay una cita con ese empleado en esa hora.
+Modelé lo más sencillo que pude, asumiendo que cada mes solo tiene 30 días, que
+los días lunes, martes, miércoles, ..., domingo tienen una correspondencia
+directa con 0, 1, 2, ..., 6. Cada mes inicia el día martes 1. Las horas son
+0, 0.5, 1, 1.5, ..., 23.5 donde si un número tiene .5 significa que lleva media
+hora.
+La complejidad para organizar a los empleados es O(7*48*n) por los días de la
+semana, los horarios exitentes y la cantidad de empleados. Al final la complejidad
+solo es O(n).
+La complejidad para organizar las citas es O(30*m) por los días del mes,
+y la cantidad de citas. Al final la complejidad solo es O(m).
+Una vez organizada la información, la complejidad para dar los horarios
+disponibles es O(30*48*n) por los días del mes, las horas disponibles y porque
+en el peor caso todos los empleados trabajan todo el tiempo. Al final la
+complejidad solo es O(n).
+La complejidad total del algoritmo después de organizar la información y
+utilizarla es O(n+m).
